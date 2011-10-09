@@ -1,5 +1,0 @@
-def main():
-    return sum(filter(lambda k: k%3 or k%5 == 0, xrange(1,1000))):
-    
-
-main():
