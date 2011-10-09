@@ -1,0 +1,9 @@
+#Find the greatest product of five consecutive digits in the 1000-digit number.
+#Number is located in 008.txt
+
+def main():
+    number = "".join([line.strip() for line in file("008.txt","r").readlines()])
+    
+
+
+print main()
