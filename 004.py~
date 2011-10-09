@@ -1,0 +1,10 @@
+def is_palindrome(n):
+    return n == int(str(n)[::-1])
+
+palindromes = []
+for i in xrange(100,1000):
+    for j in xrange(100,1000):
+        cur_num = i*j
+        if is_palindrome(cur_num): palindromes.append(cur_num)
+print palindromes
+print max(palindromes)

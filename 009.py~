@@ -1,0 +1,2 @@
+def is_triplet(a,b,c):
+    sum(lamda k: pow(k,2), list(a,b)
