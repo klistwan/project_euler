@@ -1,0 +1,8 @@
+#By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
+
+import fibonacci
+def main(limit=4000000, curnum=1,l=[]):
+    while fibonacci.number(curnum) <= limit:
+        l.append(fibonacci.number(curnum))
+    return sum(filter(lambda k: k%2 == 0, l))
+        

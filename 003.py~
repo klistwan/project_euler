@@ -1,0 +1,4 @@
+#What is the largest prime factor of the number 600851475143
+
+import prime
+def main(): return max(prime.factorization(600851475143).values)
