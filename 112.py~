@@ -1,0 +1,26 @@
+#Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468. Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+
+#We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
+
+#Find the least number for which the proportion of bouncy numbers is exactly 99%.
+
+def isBouncy(n):
+    """Returns True if n is a bouncy number; False otherwise."""
+    num_list = map(lambda k: int(k), list(str(n)))
+    changes = len(set([num_list[k]<=num_list[k+1] for k in range(len(num_list)-1)]))
+    if changes == 2: return True
+    return False
+
+def percentageOfBouncyNums(n):
+    """Returns percentage of bouncy numbers below n."""
+    nums = xrange(1,n)
+    bouncyNums = filter(lambda num: isBouncy(num), nums)
+    return len(bouncyNums)*100.0/n
+
+for i in range(1,500):
+    print i,percentageOfBouncyNums(i)
+
+
+
+
+##I consider 444, 445, 446 to be bouncy when they shouldn't.
