@@ -1,0 +1,12 @@
+Which starting number, under one million, produces the longest chain?
+
+The following iterative sequence is defined for the set of positive integers:
+
+n  n/2 (n is even)
+n  3n + 1 (n is odd)
+
+def CollatzChain(n):
+    if n == 1: return 1
+    if n % 2: return 1 + CollatzChain(3*n+1)
+    return 1 + CollatzChain(n/2)
+    
