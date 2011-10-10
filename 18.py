@@ -1,10 +1,7 @@
+#Find the maximum total from top to bottom of the triangle in 018.txt
 
+rows = file("018.txt","r").readlines().reverse()
 
-##Problem 18
-#f = file("smaller_triangle.txt","r")
-##f = file("small_triangle.txt","r")
-#lines = f.readlines()
-#lines.reverse()
 #new_tri = []
 #for line in lines:
     #line = line.split()

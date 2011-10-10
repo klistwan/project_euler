@@ -4,7 +4,7 @@ def factorial(n): return reduce(lambda k,y: k*y, xrange(2,n+1), 1)
 
 
 #To compute the number of digits in a number:
-def find_digits(n):
+def num_of_digits(n):
     return int(log10(n)) + 1
 
 #print find_digits(2482),"is equal to 4... unless I did it wrong"
