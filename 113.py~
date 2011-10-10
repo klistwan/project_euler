@@ -1,7 +1,0 @@
-def binomial(n, k):
-  nt = 1
-  for t in range(min(k, n-k)):
-    nt = nt*(n-t)//(t+1)
-  return nt
-
-print (5,3)

@@ -1,3 +1,0 @@
-def factorial(n): return reduce(lambda k,y: k*y, xrange(2,n+1), 1)
-
-
