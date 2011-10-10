@@ -1,0 +1,4 @@
+#What is the value of the first triangle number to have over five hundred divisors?
+
+def fun(i):
+...     return 0.5*(pow(i,2)+i)
