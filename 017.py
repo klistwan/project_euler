@@ -1,30 +1,19 @@
-##Problem 17
-#dict = {1: 3, 2: 3, 3: 5, 4: 4, 5: 4, 6: 3, 7: 5, 8: 5, 9: 4, 10:3, 11:6, 12:6, 13:8, 14:8, 15:7, 16:7, 17: 9, 18: 8, 19: 8, 20: 6, 30: 6, 40:5, 50: 5, 60: 5, 70: 7,  80:6, 90:6}
+#If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+#If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+#For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters.
 
-#def get_sum(end):
-    #sum = 0
-    #for i in range(1,end+1):
-	#sum += get_length(i)
-    #return sum
+dict = {1: 3, 2: 3, 3: 5, 4: 4, 5: 4, 6: 3, 7: 5, 8: 5, 9: 4, 10:3, 11:6, 12:6, 13:8, 14:8, 15:7, 16:7, 17: 9, 18: 8, 19: 8, 20: 6, 30: 6, 40:5, 50: 5, 60: 5, 70: 7,  80:6, 90:6, 1000:11}
 
-#def get_length(num):
-    #if num==1000:
-	#return 11
-    #elif num<100:
-	#return length_2_digits(num)
-    #elif num % 100 == 0:
-	#return 7 + dict[int(str(num)[0])]
-    #else:
-	#return dict[int(str(num)[0])] + 10 + length_2_digits(int(str(num)[1:]))
+def getLength(num):
+    if num in dict: return dict[num]
+    elif num < 100: return getLength_twoDigits(num)
+    elif not num % 100: return 7 + dict[num/100]
+    else: return dict[num/100] + 10 + getLength_twoDigits(num%100) #10 is for "hundred and"
 
-#def length_2_digits(num):
-    #if 0 == int(str(num)[0]):
-	#return dict[int(str(num)[1])]
-    #elif num < 20 or num % 10 == 0:
-	#return dict[num]
-    #else:
-	#first = int(str(num)[0])*10
-	#second = int(str(num)[1])
-	#return dict[first] + dict[second]
-    
-#print get_sum(1000)
+def getLength_twoDigits(num):
+    if num in dict: return dict[num]
+    else: return dict[num%10] + dict[10*(num/10)]
+
+def main(max = 1000):
+    return reduce(lambda k,y: k+y, [getLength(n) for n in xrange(1,max+1)], 0)
+print main()
