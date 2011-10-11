@@ -1,6 +1,5 @@
 from math import sqrt
 import prime
-
 primes = filter(lambda k: prime.isprime(k), xrange(2,51))
  
 mult = lambda x: reduce(lambda y, z: y * z, x, 1)
