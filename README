@@ -1,6 +1,7 @@
 These are my solutions to the Project Euler problems (http://projecteuler.net).
 
-As of Oct 9/2011, I'm still in the process of adding my older solutions.
+As of Oct 11/2011, I'm still in the process of adding my older solutions.
 
 TO DO:
-Problem 111) Rewrite code; make cleaner/readable.
+	Problem 111) Rewrite code; remove having to check obvious composite numbers (anything ending in 0,2,4,5,6,8); make cleaner/readable.
+	Problem ???) For bouncy number questions, check out: http://stackoverflow.com/questions/4983258/python-how-to-check-list-monotonicity
